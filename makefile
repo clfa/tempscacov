@@ -1,9 +1,9 @@
-SOUF=cf.c cf.h
-OPT=-Wall -g -o 
-TemptureTrans:cf.o TemptureTrans.c
-	gcc cf.o $@.c $(OPT) $@
-cf.o:$(SOUF)
-	gcc -c cf.c
+SOUF = cf.c cf.h TemperatureTrans.c
+CC = gcc 
+OPT = -Wall -o 
+TemperatureTrans: $(SOUF)
+	@$(CC) $^ $(OPT) $@
+
 .PHONY:clean
 clean:
-	-rm *.o TemptureTrans
+	@rm -rf TemperatureTrans
